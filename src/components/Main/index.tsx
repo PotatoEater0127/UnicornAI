@@ -1,6 +1,7 @@
 import { useLayoutEffect, useRef } from "react";
 import { useChat } from "../../context/ChatProvider";
 import { CREATOR } from "../../context/type";
+import AudioRecord from "../AudioRecord";
 import { AIBubble, UserBubble } from "../Bubble";
 import Chat from "../Chat";
 import * as Styled from "./index.styles";
@@ -35,6 +36,7 @@ function Main() {
         })}
       </Styled.Bubbles>
       <Chat />
+      <AudioRecord />
     </Styled.Container>
   );
 }
