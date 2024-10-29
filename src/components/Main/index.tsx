@@ -1,4 +1,5 @@
 import { AIBubble, UserBubble } from "../Bubble";
+import Chat from "../Chat";
 import * as Styled from "./index.styles";
 
 function Main() {
@@ -26,6 +27,7 @@ function Main() {
           dirigible treats cursed petrificus three.
         </UserBubble>
       </Styled.Bubbles>
+      <Chat />
     </Styled.Container>
   );
 }
