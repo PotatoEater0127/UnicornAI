@@ -1,16 +1,16 @@
 import * as Styled from "./App.styles";
 import Aside from "./components/Aside";
 import Main from "./components/Main";
-import { ChatProvider } from "./context/ChatProvider";
+import RootProvider from "./context/RootProvider";
 
 function App() {
   return (
-    <ChatProvider>
+    <RootProvider>
       <Styled.Container>
         <Aside />
         <Main />
       </Styled.Container>
-    </ChatProvider>
+    </RootProvider>
   );
 }
 

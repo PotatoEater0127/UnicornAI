@@ -1,9 +1,11 @@
 import { useLayoutEffect, useRef } from "react";
 import { useChat } from "../../context/ChatProvider";
-import { CREATOR } from "../../context/type";
+import { useFeature } from "../../context/FeatureProvider";
+import { CREATOR, FEATURE } from "../../context/type";
 import AudioRecord from "../AudioRecord";
 import { AIBubble, UserBubble } from "../Bubble";
 import Chat from "../Chat";
+import FeatureToggle from "../FeatureToggle";
 import * as Styled from "./index.styles";
 
 const BubbleMap = {
@@ -15,9 +17,12 @@ function Main() {
   const { chats } = useChat();
   const displayChat = chats.slice().reverse();
 
+  const { curFeature } = useFeature();
+  const showInputChat = curFeature === FEATURE.PREVIEW_TEXT;
+
   const bubblesRef = useRef<HTMLDivElement>(null);
 
-  // scroll to the bottom
+  // scroll to the bottom when new chat is added
   useLayoutEffect(() => {
     if (bubblesRef.current) {
       bubblesRef.current.scrollTo({
@@ -35,8 +40,11 @@ function Main() {
           return <Bubble key={chat.id}>{chat.content}</Bubble>;
         })}
       </Styled.Bubbles>
-      <Chat />
-      <AudioRecord />
+      <Styled.Action>
+        {showInputChat && <Chat />}
+        <AudioRecord />
+      </Styled.Action>
+      <FeatureToggle />
     </Styled.Container>
   );
 }

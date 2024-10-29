@@ -6,6 +6,7 @@ export const Container = styled.main`
   flex-direction: column;
   justify-content: space-between;
   padding-bottom: 32px;
+  width: 60vw;
 `;
 
 export const Bubbles = styled.div`
@@ -18,4 +19,8 @@ export const Bubbles = styled.div`
   ${BubbleContainer} {
     margin-bottom: 32px;
   }
+`;
+
+export const Action = styled.div`
+  display: flex;
 `;
