@@ -4,9 +4,9 @@ import * as Styled from "./index.styles";
 
 function Aside() {
   return (
-    <Styled.Container>
+    <Styled.Aside>
       <img src={avatar} className="avatar" alt="avatar" />
-    </Styled.Container>
+    </Styled.Aside>
   );
 }
 

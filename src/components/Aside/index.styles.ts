@@ -1,6 +1,7 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import { media } from "../../styles/ media.sytles";
 
-export const Container = styled.aside`
+export const Aside = styled.aside`
   display: flex;
   flex-direction: column;
   justify-content: end;
@@ -8,4 +9,9 @@ export const Container = styled.aside`
     width: 600px;
     height: 600px;
   }
+  ${media.xs(
+    css`
+      display: none;
+    `
+  )}
 `;
