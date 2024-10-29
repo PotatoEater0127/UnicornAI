@@ -1,23 +1,29 @@
+import { AIBubble, UserBubble } from "../Bubble";
 import * as Styled from "./index.styles";
 
 function Main() {
   return (
     <Styled.Container>
-      <div className="bubble">
+      <AIBubble>
         Potter ipsum wand elf parchment wingardium. Pigwidgeon hedwig armchairs
         elemental teacup tell. Dungeons thieves kiss red patronum dirigible
         treats cursed petrificus three.
-      </div>
-      <div className="bubble">
+      </AIBubble>
+      <UserBubble>
         Potter ipsum wand elf parchment wingardium. Pigwidgeon hedwig armchairs
         elemental teacup tell. Dungeons thieves kiss red patronum dirigible
         treats cursed petrificus three.
-      </div>
-      <div className="bubble">
+      </UserBubble>
+      <AIBubble>
         Potter ipsum wand elf parchment wingardium. Pigwidgeon hedwig armchairs
         elemental teacup tell. Dungeons thieves kiss red patronum dirigible
         treats cursed petrificus three.
-      </div>
+      </AIBubble>
+      <UserBubble>
+        Potter ipsum wand elf parchment wingardium. Pigwidgeon hedwig armchairs
+        elemental teacup tell. Dungeons thieves kiss red patronum dirigible
+        treats cursed petrificus three.
+      </UserBubble>
     </Styled.Container>
   );
 }
