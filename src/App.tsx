@@ -1,13 +1,13 @@
-import "./App.css";
+import * as Styled from "./App.styles";
 import Aside from "./components/Aside";
 import Main from "./components/Main";
 
 function App() {
   return (
-    <div className="app-wrapper">
+    <Styled.Container>
       <Aside />
       <Main />
-    </div>
+    </Styled.Container>
   );
 }
 

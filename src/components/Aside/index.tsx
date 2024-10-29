@@ -1,11 +1,12 @@
 import avatar from "../../assets/avatar.svg";
-import "./index.css";
+
+import * as Styled from "./index.styles";
 
 function Aside() {
   return (
-    <aside className="aside">
+    <Styled.Container>
       <img src={avatar} className="avatar" alt="avatar" />
-    </aside>
+    </Styled.Container>
   );
 }
 

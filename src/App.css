@@ -1,7 +1,0 @@
-.app-wrapper {
-  background: center bottom/ contain no-repeat
-    url("/public/assets/background.png");
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-}
