@@ -2,11 +2,11 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 
-import { Reset as RestCSS } from "styled-reset";
+import ResetStyles from "./styles/reset.styles.ts";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <RestCSS />
+    <ResetStyles />
     <App />
   </StrictMode>
 );
