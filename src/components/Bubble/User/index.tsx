@@ -1,5 +1,4 @@
-import Arrow from "../ components/Arrow";
-import Chat from "../ components/Chat";
+import { Arrow, Chat } from "../index.styles";
 import * as Styled from "./index.styles";
 
 function UserBubble({ children }: { children: React.ReactNode }) {

@@ -1,9 +1,7 @@
 import styled from "styled-components";
-import Arrow, { ARROW_SIZE } from "../ components/Arrow";
-import Chat from "../ components/Chat";
+import { Arrow, ARROW_SIZE, BubbleContainer, Chat } from "../index.styles";
 
-export const Container = styled.div`
-  position: relative;
+export const Container = styled(BubbleContainer)`
   margin-right: ${ARROW_SIZE}px;
   ${Chat} {
     background: #fff;
