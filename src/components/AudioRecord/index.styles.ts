@@ -1,7 +1,7 @@
 import styled, { css, keyframes } from "styled-components";
 
 type ButtonProps = {
-  isRecording?: boolean;
+  $isRecording?: boolean;
 };
 
 const pulseAnimation = keyframes`
@@ -23,8 +23,8 @@ export const Button = styled.button<ButtonProps>`
   width: 120px;
   height: 120px;
 
-  ${({ isRecording }) =>
-    isRecording &&
+  ${({ $isRecording }) =>
+    $isRecording &&
     css`
       animation: ${pulseAnimation} 1.5s infinite;
     `}

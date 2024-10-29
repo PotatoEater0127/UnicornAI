@@ -13,7 +13,7 @@ function FeatureToggle() {
         <Styled.Li
           key={feature}
           onClick={() => setFeature(feature)}
-          isActive={curFeature === feature}
+          $isActive={curFeature === feature}
         >
           {FEATURE_NAME[feature]}
         </Styled.Li>

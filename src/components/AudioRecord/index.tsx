@@ -57,7 +57,7 @@ function AudioRecord() {
   };
 
   return (
-    <Styled.Button onClick={handleRecordToggle} isRecording={isRecording} />
+    <Styled.Button onClick={handleRecordToggle} $isRecording={isRecording} />
   );
 }
 
