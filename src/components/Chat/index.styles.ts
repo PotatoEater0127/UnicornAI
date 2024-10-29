@@ -1,11 +1,14 @@
 import styled from "styled-components";
 
+const BORDER_RADIUS = 16;
+
 export const Form = styled.form`
   background-color: #fff;
-  border-radius: 16px;
+  border-radius: ${BORDER_RADIUS}px;
   display: flex;
   align-items: center;
   padding: 32px;
+  position: relative;
   width: 1000px;
 
   .textarea {
@@ -31,4 +34,15 @@ export const Form = styled.form`
       cursor: pointer;
     }
   }
+`;
+
+export const Loading = styled.div`
+  background: gray;
+  border-radius: ${BORDER_RADIUS}px;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 `;
