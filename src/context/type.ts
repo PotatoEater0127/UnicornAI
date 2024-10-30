@@ -7,6 +7,7 @@ export type Creator = (typeof CREATOR)[keyof typeof CREATOR];
 
 export const STATUS = {
   IDLE: "IDLE",
+  WAITING_USER_INPUT: "WAITING_USER_INPUT",
   AI_THINKING: "AI_THINKING",
   AI_RESPONDING: "AI_RESPONDING",
 } as const;

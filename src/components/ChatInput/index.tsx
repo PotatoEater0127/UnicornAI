@@ -45,6 +45,7 @@ function ChatInput({ hidden = false }: { hidden?: boolean }) {
       return;
     }
     clearInput();
+    setChatStatus(STATUS.WAITING_USER_INPUT);
     await userRespond(content);
     setChatStatus(STATUS.AI_THINKING);
     await aiRespond();
@@ -74,21 +75,23 @@ function ChatInput({ hidden = false }: { hidden?: boolean }) {
     }
   };
 
-  const isWaitingAI = chatStatus === STATUS.AI_THINKING;
+  const isBusy =
+    chatStatus === STATUS.AI_THINKING ||
+    chatStatus === STATUS.WAITING_USER_INPUT;
 
   return (
     <Styled.Container>
       <Styled.Form onSubmit={handleSubmit} ref={formRef} $hidden={hidden}>
-        {isWaitingAI && <Styled.Loading />}
+        {isBusy && <Styled.Loading />}
         <textarea
           className="textarea"
           ref={textareaRef}
           onKeyDown={handleKeyDown}
           rows={rowNumber}
           placeholder="Aa"
-          disabled={isWaitingAI || hidden}
+          disabled={isBusy || hidden}
         />
-        <button type="submit" className="send" disabled={isWaitingAI} />
+        <button type="submit" className="send" disabled={isBusy} />
       </Styled.Form>
     </Styled.Container>
   );

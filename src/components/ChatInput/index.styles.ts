@@ -22,6 +22,11 @@ export const Form = styled.form<FormProps>`
       padding: 8px 12px;
     `
   )}
+  ${media.sm(
+    css`
+      padding: 16px;
+    `
+  )}
 
   .textarea {
     font-family: "Inter", sans-serif;
@@ -44,6 +49,9 @@ export const Form = styled.form<FormProps>`
           font-size: 1rem;
         `
       )}
+    }
+    &:disabled {
+      background-color: initial;
     }
     /* hide scrollbar */
     &::-webkit-scrollbar {
