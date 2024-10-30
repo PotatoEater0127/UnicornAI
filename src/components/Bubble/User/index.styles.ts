@@ -11,16 +11,19 @@ import {
 
 export const Container = styled(BubbleContainer)`
   margin-right: ${ARROW_SIZE}px;
+  margin-left: 10%;
   align-self: flex-end;
 
   ${media.xs(
     css`
       margin-right: ${ARROW_SIZE_XS}px;
+      margin-left: 30%;
     `
   )}
   ${media.sm(
     css`
       margin-right: ${ARROW_SIZE_SM}px;
+      margin-left: 30%;
     `
   )}
 

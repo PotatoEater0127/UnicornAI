@@ -7,7 +7,7 @@ type ContainerProps = {
 };
 
 const DOT_COLOR = "#9880ff";
-const DISTANCE = 20;
+const DISTANCE = 17.5;
 const ORIGIN = 9984;
 const SECOND = ORIGIN + DISTANCE;
 const THIRD = SECOND + DISTANCE;
@@ -48,6 +48,18 @@ export const LoadingAnimation = styled.span`
   color: ${DOT_COLOR};
   animation: ${dotTyping} 1.5s infinite linear;
   transform: translate(50px, -50%);
+  ${media.xs(
+    css`
+      width: 5px;
+      height: 5px;
+    `
+  )}
+  ${media.sm(
+    css`
+      width: 5px;
+      height: 5px;
+    `
+  )}
 `;
 
 export const Container = styled(BubbleContainer)<ContainerProps>`
@@ -70,6 +82,7 @@ export const Container = styled(BubbleContainer)<ContainerProps>`
   ${Chat} {
     background: #000;
     color: #fff;
+    animation: type 4s steps(60, end);
   }
   ${Arrow} {
     border-left-color: #000;
@@ -84,14 +97,17 @@ export const Wrapper = styled.div`
   display: flex;
   position: relative;
   justify-content: space-between;
+  margin-right: 10%;
   ${media.xs(
     css`
-      width: 80%;
+      width: 60%;
+      margin-right: 25%;
     `
   )}
   ${media.sm(
     css`
-      width: 80%;
+      width: 60%;
+      margin-right: 25%;
     `
   )}
 `;
@@ -101,13 +117,13 @@ export const MiniAvatar = styled.img`
   margin-right: auto;
   ${media.xs(
     css`
-      width: 15%;
+      width: 10%;
       display: block;
     `
   )}
   ${media.sm(
     css`
-      width: 15%;
+      width: 10%;
       display: block;
     `
   )}

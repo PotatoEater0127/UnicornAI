@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useChat } from "../../context/ChatProvider";
 import { FAKE_RESPONSE } from "../../context/data";
 import { CREATOR, STATUS } from "../../context/type";
@@ -12,6 +12,7 @@ const WAIT_TIME = {
 };
 
 function ChatInput({ hidden = false }: { hidden?: boolean }) {
+  const [rowNumber, setRowNumber] = useState(1);
   const { addChat, chatStatus, setChatStatus } = useChat();
 
   const formRef = useRef<HTMLFormElement>(null);
@@ -59,6 +60,18 @@ function ChatInput({ hidden = false }: { hidden?: boolean }) {
       event.preventDefault();
       formRef.current?.requestSubmit();
     }
+
+    // add new line
+    if (event.key === "Enter" && event.shiftKey) {
+      const MAX_ROW = 4;
+      setRowNumber((prev) => Math.min(prev + 1, MAX_ROW));
+    }
+
+    // remove new line
+    if (event.key === "Backspace" && event.shiftKey) {
+      const MIN_ROW = 1;
+      setRowNumber((prev) => Math.max(prev - 1, MIN_ROW));
+    }
   };
 
   const isWaitingAI = chatStatus === STATUS.AI_THINKING;
@@ -71,7 +84,7 @@ function ChatInput({ hidden = false }: { hidden?: boolean }) {
           className="textarea"
           ref={textareaRef}
           onKeyDown={handleKeyDown}
-          rows={1}
+          rows={rowNumber}
           placeholder="Aa"
           disabled={isWaitingAI || hidden}
         />

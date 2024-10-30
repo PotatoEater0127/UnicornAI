@@ -31,6 +31,11 @@ export const Form = styled.form<FormProps>`
     outline: none;
     resize: none;
     flex-grow: 1;
+    ${media.xs(
+      css`
+        font-size: ${12 / 16}rem;
+      `
+    )}
     &::placeholder {
       color: #8d8d8d;
       font-size: 1.3rem;

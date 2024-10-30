@@ -48,6 +48,7 @@ export const Chat = styled.p`
     css`
       font-size: 1rem;
       padding: 16px;
+      line-height: 1.2rem;
     `
   )}
 `;

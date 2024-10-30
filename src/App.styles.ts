@@ -29,4 +29,14 @@ export const Content = styled.div`
       padding: 0;
     `
   )}
+   ${media.md(
+    css`
+      padding-right: 2.5%;
+    `
+  )}
+   ${media.lg(
+    css`
+      padding-right: 2.5%;
+    `
+  )}
 `;
