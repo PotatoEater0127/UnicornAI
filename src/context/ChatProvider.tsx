@@ -2,19 +2,13 @@ import React, { createContext, ReactNode, useContext, useState } from "react";
 
 import { v1 as uuidv1 } from "uuid";
 import { defaultChats } from "./data";
-import { Creator } from "./type";
-
-export type Message = {
-  creator: Creator;
-  id: string;
-  content: string;
-};
+import { Creator, Message, STATUS, Status } from "./type";
 
 export type ChatContextType = {
   chats: Message[];
   addChat: (content: string, creator: Creator) => void;
-  isLoading: boolean;
-  setIsLoading: (isLoading: boolean) => void;
+  chatStatus: Status;
+  setChatStatus: (status: Status) => void;
 };
 
 export const ChatContext = createContext<ChatContextType | undefined>(
@@ -27,7 +21,7 @@ type ChatProviderProps = {
 
 export const ChatProvider: React.FC<ChatProviderProps> = ({ children }) => {
   const [chats, setChats] = useState<Message[]>(defaultChats);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [chatStatus, setChatStatus] = useState<Status>(STATUS.IDLE);
 
   const addChat = (content: string, creator: Creator) => {
     const newChat: Message = {
@@ -39,7 +33,7 @@ export const ChatProvider: React.FC<ChatProviderProps> = ({ children }) => {
   };
 
   return (
-    <ChatContext.Provider value={{ chats, addChat, isLoading, setIsLoading }}>
+    <ChatContext.Provider value={{ chats, addChat, chatStatus, setChatStatus }}>
       {children}
     </ChatContext.Provider>
   );

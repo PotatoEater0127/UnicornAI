@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { useChat } from "../../context/ChatProvider";
 import { useFeature } from "../../context/FeatureProvider";
-import { CREATOR, FEATURE } from "../../context/type";
+import { CREATOR, FEATURE, STATUS } from "../../context/type";
 import { useFadeOutToTop } from "../../hooks/useFadeOutToTop";
 import { useScrollToBottom } from "../../hooks/useScrollToBottom";
 import AudioRecord from "../AudioRecord";
@@ -17,14 +17,14 @@ const BubbleMap = {
 };
 
 function Main() {
-  const { chats, isLoading } = useChat();
+  const { chats, chatStatus } = useChat();
   const { curFeature } = useFeature();
   const showInputChat = curFeature === FEATURE.PREVIEW_TEXT;
 
   const bubblesRef = useRef<HTMLDivElement>(null);
   useFadeOutToTop(bubblesRef);
-  // scroll to the bottom when new chat is added, or when loading state changes
-  useScrollToBottom(bubblesRef, [chats.length, isLoading]);
+  // scroll to the bottom when new chat is added, or when status changes
+  useScrollToBottom(bubblesRef, [chats.length, chatStatus]);
 
   return (
     <Styled.Container>
@@ -33,7 +33,7 @@ function Main() {
           const Bubble = BubbleMap[chat.creator];
           return <Bubble key={chat.id}>{chat.content}</Bubble>;
         })}
-        {isLoading && <LoadingPlaceholder />}
+        {chatStatus === STATUS.AI_THINKING && <LoadingPlaceholder />}
       </Styled.Bubbles>
       <Styled.Action>
         <ChatInput hidden={!showInputChat} />

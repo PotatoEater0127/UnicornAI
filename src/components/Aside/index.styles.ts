@@ -8,9 +8,6 @@ export const Aside = styled.aside`
   justify-content: end;
   height: 100dvh;
   width: 37vw;
-  .avatar {
-    display: block;
-  }
   ${media.xs(
     css`
       display: none;

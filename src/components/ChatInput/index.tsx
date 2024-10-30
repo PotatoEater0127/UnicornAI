@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { useChat } from "../../context/ChatProvider";
-import { AI_RESPONSE } from "../../context/data";
-import { CREATOR } from "../../context/type";
+import { FAKE_RESPONSE } from "../../context/data";
+import { CREATOR, STATUS } from "../../context/type";
 import sleep from "../../utils/sleep";
 import * as Styled from "./index.styles";
 
@@ -12,7 +12,7 @@ const WAIT_TIME = {
 };
 
 function ChatInput({ hidden = false }: { hidden?: boolean }) {
-  const { addChat, isLoading, setIsLoading } = useChat();
+  const { addChat, chatStatus, setChatStatus } = useChat();
 
   const formRef = useRef<HTMLFormElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -31,8 +31,7 @@ function ChatInput({ hidden = false }: { hidden?: boolean }) {
 
   const aiRespond = async () => {
     await sleep(WAIT_TIME.AI);
-    addChat(AI_RESPONSE, CREATOR.AI);
-    setIsLoading(false);
+    addChat(FAKE_RESPONSE, CREATOR.AI);
   };
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -46,9 +45,11 @@ function ChatInput({ hidden = false }: { hidden?: boolean }) {
     }
     clearInput();
     await userRespond(content);
-    setIsLoading(true);
+    setChatStatus(STATUS.AI_THINKING);
     await aiRespond();
-    setIsLoading(false);
+    setChatStatus(STATUS.AI_RESPONDING);
+    await sleep(4000);
+    setChatStatus(STATUS.IDLE);
   };
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
@@ -60,19 +61,21 @@ function ChatInput({ hidden = false }: { hidden?: boolean }) {
     }
   };
 
+  const isWaitingAI = chatStatus === STATUS.AI_THINKING;
+
   return (
     <Styled.Container>
       <Styled.Form onSubmit={handleSubmit} ref={formRef} $hidden={hidden}>
-        {isLoading && <Styled.Loading />}
+        {isWaitingAI && <Styled.Loading />}
         <textarea
           className="textarea"
           ref={textareaRef}
           onKeyDown={handleKeyDown}
           rows={1}
           placeholder="Aa"
-          disabled={isLoading || hidden}
+          disabled={isWaitingAI || hidden}
         />
-        <button type="submit" className="send" disabled={isLoading} />
+        <button type="submit" className="send" disabled={isWaitingAI} />
       </Styled.Form>
     </Styled.Container>
   );
