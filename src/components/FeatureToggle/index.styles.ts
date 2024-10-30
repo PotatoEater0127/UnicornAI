@@ -10,13 +10,14 @@ type LiProps = {
 export const Li = styled.li<LiProps>`
   padding: 10px 20px;
   background: transparent;
-  border: solid 1px #79747e;
+  border: solid 1px rgb(250, 145, 45);
 
   ${({ $isActive }) =>
     $isActive &&
     css`
-      background: #000;
-      color: #fff;
+      background: rgb(245, 200, 150);
+      color: rgb(150, 85, 55);
+      font-weight: 600;
     `}
 
   &:hover {
@@ -29,8 +30,9 @@ export const Li = styled.li<LiProps>`
 
 export const Ul = styled.ul`
   align-items: stretch;
-  background: #a5a5a5;
+  background: rgb(245, 175, 150);
   border-radius: ${BORDER_RADIUS}px;
+  color: rgb(100, 60, 60);
   display: flex;
   font-size: ${14 / 16}rem;
   font-family: "Roboto", sans-serif;

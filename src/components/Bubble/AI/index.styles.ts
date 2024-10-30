@@ -6,7 +6,7 @@ type ContainerProps = {
   $isLoading: boolean;
 };
 
-const DOT_COLOR = "#9880ff";
+const DOT_COLOR = "#fff";
 const DISTANCE = 17.5;
 const ORIGIN = 9984;
 const SECOND = ORIGIN + DISTANCE;
@@ -80,12 +80,12 @@ export const Container = styled(BubbleContainer)<ContainerProps>`
   )}
 
   ${Chat} {
-    background: #000;
+    background: linear-gradient(135deg, #c084fc 0%, #d484e0 50%, #efa3b9 100%);
     color: #fff;
     animation: type 4s steps(60, end);
   }
   ${Arrow} {
-    border-left-color: #000;
+    border-left-color: #c084fc;
     position: absolute;
     top: 50%;
     left: 2px;
