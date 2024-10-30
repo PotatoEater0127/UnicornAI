@@ -23,4 +23,10 @@ export const Content = styled.div`
       padding: 0;
     `
   )}
+  ${media.sm(
+    css`
+      justify-content: center;
+      padding: 0;
+    `
+  )}
 `;

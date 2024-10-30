@@ -1,4 +1,5 @@
-import styled, { keyframes } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
+import { media } from "../../../styles/ media.styles";
 import { Arrow, ARROW_SIZE, BubbleContainer, Chat } from "../index.styles";
 
 type ContainerProps = {
@@ -53,6 +54,19 @@ export const Container = styled(BubbleContainer)<ContainerProps>`
   position: relative;
   margin-left: ${ARROW_SIZE}px;
   align-self: flex-start;
+  display: flex;
+
+  ${media.xs(
+    css`
+      margin-left: 0;
+    `
+  )}
+  ${media.sm(
+    css`
+      margin-left: 0;
+    `
+  )}
+
   ${Chat} {
     background: #000;
     color: #fff;
@@ -64,4 +78,37 @@ export const Container = styled(BubbleContainer)<ContainerProps>`
     left: 2px;
     transform: translate(-100%, -55%) rotateZ(180deg);
   }
+`;
+
+export const Wrapper = styled.div`
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  ${media.xs(
+    css`
+      width: 80%;
+    `
+  )}
+  ${media.sm(
+    css`
+      width: 80%;
+    `
+  )}
+`;
+
+export const MiniAvatar = styled.img`
+  display: none;
+  margin-right: auto;
+  ${media.xs(
+    css`
+      width: 15%;
+      display: block;
+    `
+  )}
+  ${media.sm(
+    css`
+      width: 15%;
+      display: block;
+    `
+  )}
 `;

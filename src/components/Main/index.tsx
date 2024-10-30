@@ -18,6 +18,8 @@ const BubbleMap = {
 
 function Main() {
   const { chats, chatStatus } = useChat();
+  const displayChats = chats.slice().reverse();
+
   const { curFeature } = useFeature();
   const showInputChat = curFeature === FEATURE.PREVIEW_TEXT;
 
@@ -29,11 +31,11 @@ function Main() {
   return (
     <Styled.Container>
       <Styled.Bubbles ref={bubblesRef}>
-        {chats.map((chat) => {
+        {chatStatus === STATUS.AI_THINKING && <LoadingPlaceholder />}
+        {displayChats.map((chat) => {
           const Bubble = BubbleMap[chat.creator];
           return <Bubble key={chat.id}>{chat.content}</Bubble>;
         })}
-        {chatStatus === STATUS.AI_THINKING && <LoadingPlaceholder />}
       </Styled.Bubbles>
       <Styled.Action>
         <ChatInput hidden={!showInputChat} />

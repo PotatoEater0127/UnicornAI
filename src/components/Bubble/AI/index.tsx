@@ -1,3 +1,4 @@
+import miniAvatar from "../../../assets/avatar/mini.svg";
 import { Arrow, Chat } from "../index.styles";
 import * as Styled from "./index.styles";
 
@@ -12,11 +13,14 @@ function AIBubble({
 }) {
   return (
     <Styled.Container className={className} $isLoading={isLoading}>
-      <Chat>
-        {isLoading && <Styled.LoadingAnimation />}
-        {children}
-      </Chat>
-      <Arrow />
+      <Styled.MiniAvatar src={miniAvatar} />
+      <Styled.Wrapper>
+        <Chat>
+          {isLoading && <Styled.LoadingAnimation />}
+          {children}
+        </Chat>
+        <Arrow />
+      </Styled.Wrapper>
     </Styled.Container>
   );
 }

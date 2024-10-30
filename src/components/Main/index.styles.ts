@@ -18,7 +18,7 @@ export const Container = styled.main`
 
 export const Bubbles = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   height: 75dvh;
   overflow-y: auto;
   padding: 8px;

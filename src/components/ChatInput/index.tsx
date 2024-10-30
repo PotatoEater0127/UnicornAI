@@ -7,7 +7,7 @@ import * as Styled from "./index.styles";
 
 // milliseconds, simulate response time
 const WAIT_TIME = {
-  AI: 1000,
+  AI: 1500,
   USER: 500,
 };
 

@@ -22,6 +22,7 @@ export const Aside = styled.aside`
     css`
       justify-content: center;
       width: 30vw;
+      transform: translateY(-10%);
     `
   )}
 `;
