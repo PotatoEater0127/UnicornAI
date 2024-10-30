@@ -1,7 +1,8 @@
 import { useRef, useState } from "react";
+import styled from "styled-components";
 import * as Styled from "./index.styles";
 
-function AudioRecord() {
+function AudioRecord({ className }: { className?: string }) {
   const [isRecording, setIsRecording] = useState(false);
   // record handlers
   const mediaRecorder = useRef<MediaRecorder | null>(null);
@@ -57,8 +58,10 @@ function AudioRecord() {
   };
 
   return (
-    <Styled.Button onClick={handleRecordToggle} $isRecording={isRecording} />
+    <Styled.Container className={className}>
+      <Styled.Button onClick={handleRecordToggle} $isRecording={isRecording} />
+    </Styled.Container>
   );
 }
 
-export default AudioRecord;
+export default styled(AudioRecord)``;

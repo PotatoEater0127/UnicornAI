@@ -4,7 +4,7 @@ import { useFeature } from "../../context/FeatureProvider";
 import { CREATOR, FEATURE } from "../../context/type";
 import AudioRecord from "../AudioRecord";
 import { AIBubble, UserBubble } from "../Bubble";
-import Chat from "../Chat";
+import ChatInput from "../ChatInput";
 import FeatureToggle from "../FeatureToggle";
 import * as Styled from "./index.styles";
 
@@ -41,10 +41,10 @@ function Main() {
         })}
       </Styled.Bubbles>
       <Styled.Action>
-        {showInputChat && <Chat />}
+        <ChatInput hidden={!showInputChat} />
         <AudioRecord />
+        <FeatureToggle />
       </Styled.Action>
-      <FeatureToggle />
     </Styled.Container>
   );
 }

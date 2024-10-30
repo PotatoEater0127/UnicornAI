@@ -25,11 +25,12 @@ export const Chat = styled.p`
   font-size: 1.25rem;
   line-height: 2rem;
   padding: 32px;
+  white-space: pre-line;
 
   ${media.xs(
     css`
       border-radius: 16px;
-      font-size: 1rem;
+      font-size: ${12 / 16}rem;
       padding: 8px;
       line-height: 1.1rem;
     `

@@ -12,7 +12,7 @@ export const Container = styled(BubbleContainer)`
     border-left-color: #000;
     position: absolute;
     top: 50%;
-    left: 0;
-    transform: translate(-100%, -50%) rotateZ(180deg);
+    left: 2px;
+    transform: translate(-100%, -55%) rotateZ(180deg);
   }
 `;

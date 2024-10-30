@@ -11,7 +11,7 @@ const WAIT_TIME = {
   USER: 200,
 };
 
-function Chat() {
+function ChatInput({ hidden = false }: { hidden?: boolean }) {
   const [isLoading, setIsLoading] = useState(false);
   const { addChat } = useChat();
 
@@ -61,7 +61,7 @@ function Chat() {
   };
 
   return (
-    <Styled.Form onSubmit={handleSubmit} ref={formRef}>
+    <Styled.Form onSubmit={handleSubmit} ref={formRef} $hidden={hidden}>
       {isLoading && <Styled.Loading />}
       <textarea
         className="textarea"
@@ -69,11 +69,11 @@ function Chat() {
         onKeyDown={handleKeyDown}
         rows={1}
         placeholder="Aa"
-        disabled={isLoading}
+        disabled={isLoading || hidden}
       />
       <button type="submit" className="send" disabled={isLoading} />
     </Styled.Form>
   );
 }
 
-export default Chat;
+export default ChatInput;

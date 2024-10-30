@@ -1,15 +1,30 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import { media } from "../../styles/ media.sytles";
 
 const BORDER_RADIUS = 16;
 
-export const Form = styled.form`
+type FormProps = {
+  $hidden?: boolean;
+};
+
+export const Form = styled.form<FormProps>`
   background-color: #fff;
   border-radius: ${BORDER_RADIUS}px;
   display: flex;
   align-items: center;
   padding: 32px;
   position: relative;
-  width: 1000px;
+  width: 90%;
+  max-width: 1000px;
+  opacity: ${({ $hidden }) => ($hidden ? 0 : 1)};
+  transition: opacity 0.12s ease-in;
+
+  ${media.xs(
+    css`
+      padding: 8px 16px;
+      width: 100%;
+    `
+  )}
 
   .textarea {
     font-family: "Inter", sans-serif;
@@ -22,6 +37,11 @@ export const Form = styled.form`
     &::placeholder {
       color: #8d8d8d;
       font-size: 2rem;
+      ${media.xs(
+        css`
+          font-size: 1rem;
+        `
+      )}
     }
   }
 
@@ -30,6 +50,14 @@ export const Form = styled.form`
     border-color: transparent;
     height: 40px;
     width: 40px;
+
+    ${media.xs(
+      css`
+        height: 25px;
+        width: 25px;
+      `
+    )}
+
     &:hover {
       cursor: pointer;
     }

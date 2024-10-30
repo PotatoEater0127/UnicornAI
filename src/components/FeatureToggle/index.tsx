@@ -8,17 +8,19 @@ function FeatureToggle() {
   const features = Object.values(FEATURE);
 
   return (
-    <Styled.Ul>
-      {features.map((feature) => (
-        <Styled.Li
-          key={feature}
-          onClick={() => setFeature(feature)}
-          $isActive={curFeature === feature}
-        >
-          {FEATURE_NAME[feature]}
-        </Styled.Li>
-      ))}
-    </Styled.Ul>
+    <Styled.Container>
+      <Styled.Ul>
+        {features.map((feature) => (
+          <Styled.Li
+            key={feature}
+            onClick={() => setFeature(feature)}
+            $isActive={curFeature === feature}
+          >
+            {FEATURE_NAME[feature]}
+          </Styled.Li>
+        ))}
+      </Styled.Ul>
+    </Styled.Container>
   );
 }
 

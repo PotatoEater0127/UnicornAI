@@ -40,6 +40,12 @@ export const Ul = styled.ul`
   letter-spacing: 0.1px;
   padding: 0;
 
+  ${media.xs(
+    css`
+      font-size: ${12 / 16}rem;
+    `
+  )}
+
   ${Li} {
     &:first-child {
       border-radius: ${BORDER_RADIUS}px 0 0 ${BORDER_RADIUS}px;
@@ -48,10 +54,13 @@ export const Ul = styled.ul`
       border-radius: 0 ${BORDER_RADIUS}px ${BORDER_RADIUS}px 0;
     }
   }
+`;
 
-  ${media.xs(
-    css`
-      font-size: ${12 / 16}rem;
-    `
-  )}
+export const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  ${media.xs(css`
+    width: 75%;
+  `)}
 `;

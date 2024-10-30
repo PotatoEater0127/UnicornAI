@@ -1,4 +1,5 @@
 import styled, { css, keyframes } from "styled-components";
+import { media } from "../../styles/ media.sytles";
 
 type ButtonProps = {
   $isRecording?: boolean;
@@ -11,7 +12,14 @@ const pulseAnimation = keyframes`
   100% {
     box-shadow: 0 0 0 30px rgba(0, 0, 0, 0);
   }
+`;
 
+export const Container = styled.div`
+  width: 20%;
+  order: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Button = styled.button<ButtonProps>`
@@ -28,6 +36,12 @@ export const Button = styled.button<ButtonProps>`
     css`
       animation: ${pulseAnimation} 1.5s infinite;
     `}
+
+  ${media.xs(css`
+    background-size: 20px;
+    width: 50px;
+    height: 50px;
+  `)}
 
   &:hover {
     cursor: pointer;
