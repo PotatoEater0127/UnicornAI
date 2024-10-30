@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { media } from "../../styles/ media.sytles";
+import { media } from "../../styles/ media.styles";
 
 export const Aside = styled.aside`
   display: flex;
@@ -7,7 +7,7 @@ export const Aside = styled.aside`
   align-items: center;
   justify-content: end;
   height: 100dvh;
-  width: 37%;
+  width: 40%;
   .avatar {
     display: block;
   }

@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { BREAK_POINTS, media } from "./styles/ media.sytles";
+import { BREAK_POINTS, media } from "./styles/ media.styles";
 
 export const Wrapper = styled.div`
   display: flex;

@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { media } from "../../styles/ media.sytles";
+import { media } from "../../styles/ media.styles";
 
 const BORDER_RADIUS = 16;
 

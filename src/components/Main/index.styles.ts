@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { media } from "../../styles/ media.sytles";
+import { media } from "../../styles/ media.styles";
 import { BubbleContainer } from "../Bubble/index.styles";
 
 export const Container = styled.main`

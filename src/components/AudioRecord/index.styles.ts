@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from "styled-components";
-import { media } from "../../styles/ media.sytles";
+import { media } from "../../styles/ media.styles";
 
 type ButtonProps = {
   $isRecording?: boolean;

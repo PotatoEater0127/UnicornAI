@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { media } from "../../styles/ media.sytles";
+import { media } from "../../styles/ media.styles";
 
 export const ARROW_SIZE = 39.84;
 export const ARROW_SIZE_XS = 20;
