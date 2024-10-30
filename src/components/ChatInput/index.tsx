@@ -61,18 +61,20 @@ function ChatInput({ hidden = false }: { hidden?: boolean }) {
   };
 
   return (
-    <Styled.Form onSubmit={handleSubmit} ref={formRef} $hidden={hidden}>
-      {isLoading && <Styled.Loading />}
-      <textarea
-        className="textarea"
-        ref={textareaRef}
-        onKeyDown={handleKeyDown}
-        rows={1}
-        placeholder="Aa"
-        disabled={isLoading || hidden}
-      />
-      <button type="submit" className="send" disabled={isLoading} />
-    </Styled.Form>
+    <Styled.Container>
+      <Styled.Form onSubmit={handleSubmit} ref={formRef} $hidden={hidden}>
+        {isLoading && <Styled.Loading />}
+        <textarea
+          className="textarea"
+          ref={textareaRef}
+          onKeyDown={handleKeyDown}
+          rows={1}
+          placeholder="Aa"
+          disabled={isLoading || hidden}
+        />
+        <button type="submit" className="send" disabled={isLoading} />
+      </Styled.Form>
+    </Styled.Container>
   );
 }
 

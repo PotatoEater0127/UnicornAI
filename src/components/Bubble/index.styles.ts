@@ -35,6 +35,12 @@ export const Chat = styled.p`
       line-height: 1.1rem;
     `
   )}
+  ${media.sm(
+    css`
+      font-size: 1rem;
+      padding: 16px;
+    `
+  )}
 `;
 
 export const BubbleContainer = styled.div`

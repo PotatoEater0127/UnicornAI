@@ -63,4 +63,7 @@ export const Container = styled.div`
   ${media.xs(css`
     width: 75%;
   `)}
+  ${media.sm(css`
+    width: 75%;
+  `)}
 `;

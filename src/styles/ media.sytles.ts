@@ -2,31 +2,32 @@
 
 import { css } from "styled-components";
 
-const breakpoints = {
-  xs: 480,
-  sm: 768,
-  md: 1279,
-  lg: 1280,
+export const BREAK_POINTS = {
+  XS: 480,
+  SM: 768,
+  MD: 1279,
+  LG: 1280,
+  XLG: 2560,
 };
 
 export const media = {
   xs: (styles: any) => css`
-    @media (max-width: ${breakpoints.xs}px) {
+    @media (max-width: ${BREAK_POINTS.XS}px) {
       ${styles}
     }
   `,
   sm: (styles: any) => css`
-    @media (min-width: ${breakpoints.xs + 1}px) and (max-width: ${breakpoints.sm}px) {
+    @media (min-width: ${BREAK_POINTS.XS + 1}px) and (max-width: ${BREAK_POINTS.SM}px) {
       ${styles}
     }
   `,
   md: (styles: any) => css`
-    @media (min-width: ${breakpoints.sm + 1}px) and (max-width: ${breakpoints.md}px) {
+    @media (min-width: ${BREAK_POINTS.SM + 1}px) and (max-width: ${BREAK_POINTS.MD}px) {
       ${styles}
     }
   `,
   lg: (styles: any) => css`
-    @media (min-width: ${breakpoints.lg}px) {
+    @media (min-width: ${BREAK_POINTS.LG}px) {
       ${styles}
     }
   `,

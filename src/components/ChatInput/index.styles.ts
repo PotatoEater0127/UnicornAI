@@ -14,14 +14,12 @@ export const Form = styled.form<FormProps>`
   align-items: center;
   padding: 32px;
   position: relative;
-  width: 90%;
-  max-width: 1000px;
-  opacity: ${({ $hidden }) => ($hidden ? 0 : 1)};
   transition: opacity 0.12s ease-in;
+  opacity: ${({ $hidden }) => ($hidden ? 0 : 1)};
 
   ${media.xs(
     css`
-      padding: 8px 16px;
+      padding: 8px 12px;
       width: 100%;
     `
   )}
@@ -62,6 +60,12 @@ export const Form = styled.form<FormProps>`
       cursor: pointer;
     }
   }
+`;
+
+export const Container = styled.div`
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 96%;
 `;
 
 export const Loading = styled.div`

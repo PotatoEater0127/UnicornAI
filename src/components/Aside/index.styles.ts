@@ -4,14 +4,30 @@ import { media } from "../../styles/ media.sytles";
 export const Aside = styled.aside`
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: end;
+  height: 100dvh;
+  width: 37%;
   .avatar {
-    width: 600px;
-    height: 600px;
+    display: block;
   }
   ${media.xs(
     css`
       display: none;
+    `
+  )}
+  ${media.sm(
+    css`
+      display: none;
+    `
+  )}
+  ${media.md(
+    css`
+      justify-content: center;
+      .avatar {
+        width: 400px;
+        height: 400px;
+      }
     `
   )}
 `;

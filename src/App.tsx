@@ -6,10 +6,12 @@ import RootProvider from "./context/RootProvider";
 function App() {
   return (
     <RootProvider>
-      <Styled.Container>
-        <Aside />
-        <Main />
-      </Styled.Container>
+      <Styled.Wrapper>
+        <Styled.Content>
+          <Aside />
+          <Main />
+        </Styled.Content>
+      </Styled.Wrapper>
     </RootProvider>
   );
 }

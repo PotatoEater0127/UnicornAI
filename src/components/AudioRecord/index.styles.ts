@@ -43,6 +43,12 @@ export const Button = styled.button<ButtonProps>`
     height: 50px;
   `)}
 
+  ${media.sm(css`
+    background-size: 30px;
+    width: 80px;
+    height: 80px;
+  `)}
+
   &:hover {
     cursor: pointer;
   }

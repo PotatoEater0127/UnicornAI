@@ -7,7 +7,7 @@ export const Container = styled.main`
   flex-direction: column;
   justify-content: space-between;
   padding-bottom: 32px;
-  width: 60vw;
+  flex: 1;
 
   ${media.xs(
     css`
@@ -19,13 +19,14 @@ export const Container = styled.main`
 export const Bubbles = styled.div`
   display: flex;
   flex-direction: column;
-  height: 60dvh;
+  height: 70dvh;
   overflow-y: auto;
+  padding: 8px;
   flex-direction: column-reverse;
 
   ${media.xs(css`
     margin-bottom: 8px;
-    height: 75dvh;
+    height: 85dvh;
   `)}
 
   ${BubbleContainer} {
@@ -34,17 +35,20 @@ export const Bubbles = styled.div`
     ${media.xs(css`
       margin-bottom: 8px;
     `)}
+    ${media.sm(css`
+      margin-bottom: 8px;
+    `)}
   }
 `;
 
 export const Action = styled.div`
   display: flex;
   flex-wrap: wrap;
+  gap: 8px;
   ${media.xs(
     css`
       align-items: center;
       justify-content: end;
-      gap: 8px;
     `
   )};
 `;
