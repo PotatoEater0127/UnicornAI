@@ -42,6 +42,12 @@ export const Button = styled.button<ButtonProps>`
       animation: ${pulseAnimation} 1.5s infinite;
     `}
 
+  ${media.mlg(
+    css`
+      width: 100px;
+      height: 100px;
+    `
+  )}
   ${media.xs(css`
     width: 50px;
     height: 50px;
@@ -54,12 +60,6 @@ export const Button = styled.button<ButtonProps>`
     width: 70px;
     height: 70px;
   `)}
-  ${media.mlg(
-    css`
-      width: 100px;
-      height: 100px;
-    `
-  )}
   
 
   &:hover {
