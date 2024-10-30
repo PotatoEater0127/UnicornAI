@@ -19,7 +19,6 @@ const applyOpacityBasedOnDistance = (parentElement: HTMLElement) => {
 // the more closer to the top of a container, the more transparent the children become
 export const useFadeOutToTop = (containerRef: RefObject<HTMLElement>) => {
   const handleOpacityAdjustment = useCallback(() => {
-    console.log("scroll");
     if (containerRef.current) {
       applyOpacityBasedOnDistance(containerRef.current);
     }

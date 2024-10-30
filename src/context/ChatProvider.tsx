@@ -13,6 +13,8 @@ export type Message = {
 export type ChatContextType = {
   chats: Message[];
   addChat: (content: string, creator: Creator) => void;
+  isLoading: boolean;
+  setIsLoading: (isLoading: boolean) => void;
 };
 
 export const ChatContext = createContext<ChatContextType | undefined>(
@@ -25,6 +27,7 @@ type ChatProviderProps = {
 
 export const ChatProvider: React.FC<ChatProviderProps> = ({ children }) => {
   const [chats, setChats] = useState<Message[]>(defaultChats);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const addChat = (content: string, creator: Creator) => {
     const newChat: Message = {
@@ -36,7 +39,7 @@ export const ChatProvider: React.FC<ChatProviderProps> = ({ children }) => {
   };
 
   return (
-    <ChatContext.Provider value={{ chats, addChat }}>
+    <ChatContext.Provider value={{ chats, addChat, isLoading, setIsLoading }}>
       {children}
     </ChatContext.Provider>
   );

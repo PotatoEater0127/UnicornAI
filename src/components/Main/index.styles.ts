@@ -22,7 +22,6 @@ export const Bubbles = styled.div`
   height: 75dvh;
   overflow-y: auto;
   padding: 8px;
-  flex-direction: column-reverse;
   align-items: center;
 
   /* hide scrollbar */

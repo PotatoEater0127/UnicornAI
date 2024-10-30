@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { useChat } from "../../context/ChatProvider";
 import { AI_RESPONSE } from "../../context/data";
 import { CREATOR } from "../../context/type";
@@ -7,13 +7,12 @@ import * as Styled from "./index.styles";
 
 // milliseconds, simulate response time
 const WAIT_TIME = {
-  AI: 800,
-  USER: 200,
+  AI: 1000,
+  USER: 500,
 };
 
 function ChatInput({ hidden = false }: { hidden?: boolean }) {
-  const [isLoading, setIsLoading] = useState(false);
-  const { addChat } = useChat();
+  const { addChat, isLoading, setIsLoading } = useChat();
 
   const formRef = useRef<HTMLFormElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -26,9 +25,8 @@ function ChatInput({ hidden = false }: { hidden?: boolean }) {
   };
 
   const userRespond = async (content: string) => {
-    setIsLoading(true);
-    await sleep(WAIT_TIME.USER);
     addChat(content, CREATOR.USER);
+    await sleep(WAIT_TIME.USER);
   };
 
   const aiRespond = async () => {
@@ -48,7 +46,9 @@ function ChatInput({ hidden = false }: { hidden?: boolean }) {
     }
     clearInput();
     await userRespond(content);
+    setIsLoading(true);
     await aiRespond();
+    setIsLoading(false);
   };
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {

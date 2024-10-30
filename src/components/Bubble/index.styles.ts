@@ -2,6 +2,7 @@ import styled, { css } from "styled-components";
 import { media } from "../../styles/ media.styles";
 
 export const ARROW_SIZE = 39.84;
+export const ARROW_SIZE_SM = 25;
 export const ARROW_SIZE_XS = 20;
 
 export const Arrow = styled.div`
@@ -10,6 +11,13 @@ export const Arrow = styled.div`
   border-left: ${ARROW_SIZE}px solid #fff;
 
   ${media.xs(
+    css`
+      border-top-width: 8px;
+      border-bottom-width: 8px;
+      border-left-width: ${ARROW_SIZE_XS}px;
+    `
+  )}
+  ${media.sm(
     css`
       border-top-width: 8px;
       border-bottom-width: 8px;
@@ -25,6 +33,7 @@ export const Chat = styled.p`
   font-size: 1.25rem;
   line-height: 2rem;
   padding: 32px;
+  position: relative;
   white-space: pre-line;
 
   ${media.xs(
@@ -46,4 +55,5 @@ export const Chat = styled.p`
 export const BubbleContainer = styled.div`
   position: relative;
   max-width: 1000px;
+  min-width: 50px;
 `;
