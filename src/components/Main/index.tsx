@@ -32,9 +32,18 @@ function Main() {
     <Styled.Container>
       <Styled.Bubbles ref={bubblesRef}>
         {chatStatus === STATUS.AI_THINKING && <LoadingPlaceholder />}
-        {displayChats.map((chat) => {
+        {displayChats.map((chat, index) => {
           const Bubble = BubbleMap[chat.creator];
-          return <Bubble key={chat.id}>{chat.content}</Bubble>;
+          const isLatest = index === 0;
+          const isAIBubble = chat.creator === CREATOR.AI;
+          const showTypingEffect = isLatest && isAIBubble;
+          return (
+            <Bubble
+              key={chat.id}
+              text={chat.content}
+              showTypingEffect={showTypingEffect}
+            />
+          );
         })}
       </Styled.Bubbles>
       <Styled.Action>

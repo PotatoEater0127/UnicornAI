@@ -1,10 +1,20 @@
 import { Arrow, Chat } from "../index.styles";
 import * as Styled from "./index.styles";
 
-function UserBubble({ children }: { children?: React.ReactNode }) {
+function UserBubble({
+  children,
+  text,
+  showTypingEffect = false,
+}: {
+  children?: React.ReactNode;
+  text?: string;
+  showTypingEffect?: boolean;
+}) {
   return (
     <Styled.Container>
-      <Chat>{children}</Chat>
+      <Chat text={text} enableEffect={showTypingEffect}>
+        {children}
+      </Chat>
       <Arrow />
     </Styled.Container>
   );

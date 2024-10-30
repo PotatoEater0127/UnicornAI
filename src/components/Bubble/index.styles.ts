@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { media } from "../../styles/ media.styles";
+import TypingEffect from "../TypingEffect";
 
 export const ARROW_SIZE = 39.84;
 export const ARROW_SIZE_SM = 25;
@@ -26,7 +27,7 @@ export const Arrow = styled.div`
   )}
 `;
 
-export const Chat = styled.p`
+export const Chat = styled(TypingEffect)`
   background: #fff;
   border-radius: 32px;
   font-family: "Inter", serif;
