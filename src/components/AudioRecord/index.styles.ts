@@ -20,9 +20,11 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
 
-  ${media.xs(css`
-    order: 3;
-  `)}
+  ${media.mlg(
+    css`
+      order: 3;
+    `
+  )}
 `;
 
 export const Button = styled.button<ButtonProps>`
@@ -52,6 +54,13 @@ export const Button = styled.button<ButtonProps>`
     width: 70px;
     height: 70px;
   `)}
+  ${media.mlg(
+    css`
+      width: 100px;
+      height: 100px;
+    `
+  )}
+  
 
   &:hover {
     cursor: pointer;

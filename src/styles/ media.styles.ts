@@ -7,6 +7,7 @@ export const BREAK_POINTS = {
   SM: 768,
   MD: 1279,
   LG: 1280,
+  MLG: 2147,
   XLG: 2560,
 };
 
@@ -28,6 +29,11 @@ export const media = {
   `,
   lg: (styles: any) => css`
     @media (min-width: ${BREAK_POINTS.LG}px) {
+      ${styles}
+    }
+  `,
+    mlg: (styles: any) => css`
+    @media (max-width: ${BREAK_POINTS.MLG}px) {
       ${styles}
     }
   `,
