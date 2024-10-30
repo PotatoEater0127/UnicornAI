@@ -25,6 +25,11 @@ export const Bubbles = styled.div`
   flex-direction: column-reverse;
   align-items: center;
 
+  /* hide scrollbar */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
   ${media.xs(css`
     margin-bottom: 8px;
     height: 85dvh;

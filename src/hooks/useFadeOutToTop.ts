@@ -25,6 +25,7 @@ export const useFadeOutToTop = (containerRef: RefObject<HTMLElement>) => {
     }
   }, [containerRef]);
 
+  // for scroll
   useEffect(() => {
     const container = containerRef.current;
     handleOpacityAdjustment();
@@ -38,6 +39,20 @@ export const useFadeOutToTop = (containerRef: RefObject<HTMLElement>) => {
       if (container) {
         container.removeEventListener("scroll", throttledOpacityAdjust);
       }
+    };
+  }, [containerRef, handleOpacityAdjustment]);
+
+  // for resize
+  useEffect(() => {
+    const container = containerRef.current;
+
+    const throttledOpacityAdjust = throttle(handleOpacityAdjustment, 16);
+
+    if (container) {
+      window.addEventListener("resize", throttledOpacityAdjust);
+    }
+    return () => {
+      window.removeEventListener("resize", throttledOpacityAdjust);
     };
   }, [containerRef, handleOpacityAdjustment]);
 };

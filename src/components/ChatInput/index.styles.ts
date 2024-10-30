@@ -40,6 +40,10 @@ export const Form = styled.form<FormProps>`
         `
       )}
     }
+    /* hide scrollbar */
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   .send {
