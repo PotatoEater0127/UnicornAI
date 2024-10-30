@@ -10,20 +10,17 @@ export const Wrapper = styled.div`
 
 export const Content = styled.div`
   max-width: ${BREAK_POINTS.XLG}px;
+  width: 100%;
   height: 100dvh;
   display: flex;
-  justify-content: stretch;
+  justify-content: space-between;
+  padding-left: 2.5%;
+  padding-right: 5%;
 
   ${media.xs(
     css`
       justify-content: center;
-    `
-  )}
-
-  ${media.lg(
-    css`
-      padding-left: 65px;
-      padding-right: 130px;
+      padding: 0;
     `
   )}
 `;

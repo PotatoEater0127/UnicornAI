@@ -7,7 +7,7 @@ export const Aside = styled.aside`
   align-items: center;
   justify-content: end;
   height: 100dvh;
-  width: 40%;
+  width: 37vw;
   .avatar {
     display: block;
   }
@@ -24,10 +24,7 @@ export const Aside = styled.aside`
   ${media.md(
     css`
       justify-content: center;
-      .avatar {
-        width: 400px;
-        height: 400px;
-      }
+      width: 30vw;
     `
   )}
 `;

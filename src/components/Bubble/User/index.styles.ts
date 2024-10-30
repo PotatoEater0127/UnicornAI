@@ -3,6 +3,7 @@ import { Arrow, ARROW_SIZE, BubbleContainer, Chat } from "../index.styles";
 
 export const Container = styled(BubbleContainer)`
   margin-right: ${ARROW_SIZE}px;
+  align-self: flex-end;
   ${Chat} {
     background: #fff;
   }

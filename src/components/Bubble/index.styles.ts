@@ -45,4 +45,5 @@ export const Chat = styled.p`
 
 export const BubbleContainer = styled.div`
   position: relative;
+  max-width: 1000px;
 `;

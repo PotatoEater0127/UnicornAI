@@ -24,6 +24,7 @@ export const Li = styled.li<LiProps>`
   }
 
   ${media.xs(`padding: 5px 10px;`)}
+  ${media.sm(`padding: 7.5px 15px;`)}
 `;
 
 export const Ul = styled.ul`
@@ -60,6 +61,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: auto;
   ${media.xs(css`
     width: 75%;
   `)}

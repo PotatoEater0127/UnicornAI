@@ -19,10 +19,11 @@ export const Container = styled.main`
 export const Bubbles = styled.div`
   display: flex;
   flex-direction: column;
-  height: 70dvh;
+  height: 75dvh;
   overflow-y: auto;
   padding: 8px;
   flex-direction: column-reverse;
+  align-items: center;
 
   ${media.xs(css`
     margin-bottom: 8px;
@@ -44,6 +45,8 @@ export const Bubbles = styled.div`
 export const Action = styled.div`
   display: flex;
   flex-wrap: wrap;
+  flex: 1;
+  align-items: center;
   gap: 8px;
   ${media.xs(
     css`

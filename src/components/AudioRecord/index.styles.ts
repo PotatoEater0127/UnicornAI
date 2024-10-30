@@ -16,14 +16,17 @@ const pulseAnimation = keyframes`
 
 export const Container = styled.div`
   width: 20%;
-  order: 3;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  ${media.xs(css`
+    order: 3;
+  `)}
 `;
 
 export const Button = styled.button<ButtonProps>`
-  background: center / 30px no-repeat url("/assets/audio_record_icon.svg");
+  background: center / 25% no-repeat url("/assets/audio_record_icon.svg");
   background-color: #000;
   border-radius: 50%;
   border-color: transparent;
@@ -38,15 +41,16 @@ export const Button = styled.button<ButtonProps>`
     `}
 
   ${media.xs(css`
-    background-size: 20px;
     width: 50px;
     height: 50px;
   `)}
-
   ${media.sm(css`
-    background-size: 30px;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
+  `)}
+  ${media.md(css`
+    width: 70px;
+    height: 70px;
   `)}
 
   &:hover {

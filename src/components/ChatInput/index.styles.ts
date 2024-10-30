@@ -20,7 +20,6 @@ export const Form = styled.form<FormProps>`
   ${media.xs(
     css`
       padding: 8px 12px;
-      width: 100%;
     `
   )}
 
@@ -28,13 +27,13 @@ export const Form = styled.form<FormProps>`
     font-family: "Inter", sans-serif;
     border: none;
     font-size: 1.25rem;
-    line-height: 2rem;
+    line-height: 1;
     outline: none;
     resize: none;
     flex-grow: 1;
     &::placeholder {
       color: #8d8d8d;
-      font-size: 2rem;
+      font-size: 1.3rem;
       ${media.xs(
         css`
           font-size: 1rem;
@@ -65,7 +64,7 @@ export const Form = styled.form<FormProps>`
 export const Container = styled.div`
   max-width: 1000px;
   margin: 0 auto;
-  width: 96%;
+  width: 95%;
 `;
 
 export const Loading = styled.div`
