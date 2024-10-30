@@ -2,6 +2,7 @@ import { useLayoutEffect, useRef } from "react";
 import { useChat } from "../../context/ChatProvider";
 import { useFeature } from "../../context/FeatureProvider";
 import { CREATOR, FEATURE } from "../../context/type";
+import { useFadeOutToTop } from "../../hooks/useFadeOutToTop";
 import AudioRecord from "../AudioRecord";
 import { AIBubble, UserBubble } from "../Bubble";
 import ChatInput from "../ChatInput";
@@ -21,6 +22,8 @@ function Main() {
   const showInputChat = curFeature === FEATURE.PREVIEW_TEXT;
 
   const bubblesRef = useRef<HTMLDivElement>(null);
+
+  useFadeOutToTop(bubblesRef);
 
   // scroll to the bottom when new chat is added
   useLayoutEffect(() => {
